@@ -16,3 +16,11 @@ def order_id(order_id: str)->str:
     """"Get the status of the order using its ID"""
     return f"{order_id.upper()} packed and shiped tomorrow"
 
+#create the tool here
+
+agent = create_agent(
+    model = "openai:gpt-40-mini",
+    tools = [order_id],
+    system_prompt = "You are a support agent",
+)
+
